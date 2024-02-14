@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 
 public class PIMExecuter extends Setup {
@@ -50,12 +50,12 @@ public class PIMExecuter extends Setup {
     }
 
     @Test(priority = 2, description = "Fetch employees with the status Full Time probation.")
-    public void fetchEmployeeFullTimeProbation() throws InterruptedException {
+    public void fetchEmployeeFullTimeProbation() {
         pimPage = new PIMPage(driver);
         Utils.scrollUp(driver);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         pimPage.selectEmployeeStatus(driver, 4);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Utils.scrollDown(driver);
         WebElement table = driver.findElement(By.className("oxd-table-body"));
         List<WebElement> allRows = table.findElements(By.cssSelector("[role=row]"));
@@ -69,13 +69,13 @@ public class PIMExecuter extends Setup {
     public void addFirstEmployee() throws InterruptedException, IOException, ParseException {
         pimPage = new PIMPage(driver);
         pimPage.addEmployeeLinkText.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Faker faker = new Faker();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
         String id = pimPage.inputFields.get(4).getAttribute("value");
-        String password = "Str0ngP@ssword";
+        String password = "kanYeWestLover999";
 
         pimPage.addEmployee(firstName, lastName, userName, password, password);
         String expectedName = firstName + " " + lastName;
@@ -92,13 +92,13 @@ public class PIMExecuter extends Setup {
     public void addSecondEmployee() throws InterruptedException, IOException, ParseException {
         pimPage = new PIMPage(driver);
         pimPage.addEmployeeLinkText.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Faker faker = new Faker();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String userName = faker.name().username();
         String id = pimPage.inputFields.get(4).getAttribute("value");
-        String password = "Str0ngP@ssword";
+        String password = "kanYeWestLover999";
 
         pimPage.addEmployee(firstName, lastName, userName, password, password);
         String expectedName = firstName + " " + lastName;
@@ -115,7 +115,7 @@ public class PIMExecuter extends Setup {
     public void failedAddEmployee() throws IOException, ParseException {
         pimPage = new PIMPage(driver);
         pimPage.addEmployeeLinkText.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         String userName = Utils.getLastRegisteredUser();
         pimPage.checkUserName(userName);
         Assert.assertTrue(pimPage.userNameErrorMessage.isDisplayed());

@@ -6,13 +6,10 @@ import pages.EmployeePage;
 import pages.LoginPage;
 import setup.Setup;
 import utils.Utils;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.io.IOException;
 import java.util.List;
 
 public class EmployeeTExecuter extends Setup {

@@ -7,7 +7,6 @@ import pages.LoginPage;
 import pages.PIMPage;
 import setup.Setup;
 
-import java.util.Set;
 
 public class LoginTExecuter extends Setup {
     PIMPage dashboardPage;
