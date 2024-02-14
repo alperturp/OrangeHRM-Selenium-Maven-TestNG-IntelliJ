@@ -13,9 +13,5 @@ Automated testing for OrangeHRM Software using Selenium, Java, TestNG, Maven, Gi
 - **Git**
 - **Allure Reports**
 
-### Usage
-
-1. Clone: `git clone [repository_url]`
-2. Open in IntelliJ or IDE.
-3. Configure Maven dependencies.
-4. Execute tests with TestNG.
+## Documents
+[Google Drive](https://docs.google.com/spreadsheets/d/1rm4o1t2j7R3gtv6GbzrZd46NsR4vrdyD/edit?usp=drive_link&ouid=116955989261789075520&rtpof=true&sd=true)
