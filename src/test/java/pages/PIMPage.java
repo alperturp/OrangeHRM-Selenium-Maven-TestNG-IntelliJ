@@ -32,9 +32,6 @@ public class PIMPage {
     @FindBy(className = "oxd-input")
     public List<WebElement> inputFields;
 
-    @FindBy(className = "orangehrm-main-title")
-    public WebElement title;
-
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div[2]")
     public WebElement idExposer;
 
